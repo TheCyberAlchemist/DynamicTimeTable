@@ -54,7 +54,7 @@ ROOT_URLCONF = 'DynamicTimeTable.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+"\\templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
