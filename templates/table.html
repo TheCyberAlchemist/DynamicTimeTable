@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>table</title>
+</head>
+<body>
+	<table>
+		<thead>
+		{%for day in days%}
+			<th class = "{{day}}">{{day}}</th>
+		{% endfor %}
+		</thead>
+		{%for interval in intervals%}
+			<tr>
+				{% for day in days %}
+					<td class = "{{day}} {{interval}}">{{interval}}</td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</table>
+	<style type="text/css">
+		table{
+			padding: 300px;
+			padding-left: 400px;
+		}
+		table td{
+			color: red;
+			border: 1px solid black;
+			/*display: inline;*/
+		}
+		.TUE.a{
+			color: blue;
+		}
+</style>
+</body>
+</html>
