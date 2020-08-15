@@ -1,12 +1,17 @@
 -------------Countdowns----------------------
-Select a specific event on the table
-Drag & Drop buttons
+
+
+Create schema
+
+
+formatting and making UI
+
 sharable tables using unique code( between colleagues )
 
 
 buttons = objects.all()
 
-class button{
+class Activity{
 	
 	Name_of_event;
 	link;

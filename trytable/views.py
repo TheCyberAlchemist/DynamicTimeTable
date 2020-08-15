@@ -6,6 +6,6 @@ from django.shortcuts import render
 def table(request):
 	context = {
 	'days' : ["MON","TUE","WED","THU","FRI"],
-	'intervals' : ["a","b","c"]
+	'intervals' : ["l1","l2","l3"]
 	}
 	return render(request,"table.html",context)

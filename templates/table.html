@@ -13,11 +13,14 @@
 		{%for interval in intervals%}
 			<tr>
 				{% for day in days %}
-					<td class = "{{day}} {{interval}}">{{interval}}</td>
+					<td class="{{day}} {{interval}}" ondrop="drop(event)" ondragover="allowDrop(event)" >
+						<button ondrop="drop_disabled(event)" draggable = "true" ondragstart="drag(event)" class = "{{day}} {{interval}} butt">button</button>
+					</td>
 				{% endfor %}
 			</tr>
 		{% endfor %}
 	</table>
+	<!-- <button draggable = "true" ondragstart="drag(event)" class = "mybutton">button</button> -->
 	<style type="text/css">
 		table{
 			padding: 300px;
@@ -26,11 +29,45 @@
 		table td{
 			color: red;
 			border: 1px solid black;
+			height: 50px;
+			width: 200px;
 			/*display: inline;*/
 		}
-		.TUE.a{
-			color: blue;
+		.TUE.l2.butt{
+			background-color: blue;
 		}
 </style>
+<script type="text/javascript">
+	// document.getElementsByClassName('TUE l1')[0].innerHTML = '<button>button</button>';
+	// dragElement(document.getElementsByClassName("mybutton"));
+
+	function allowDrop(ev) {
+	  ev.preventDefault();
+	}
+
+	function drag(ev) {
+		// console.log(ev.target.className);
+	 	ev.dataTransfer.setData("text", ev.target.className);
+	}
+	function drop_disabled(ev) {
+		ev.preventDefault();
+	}
+	function drop(ev) {
+	  ev.preventDefault();	
+	  var data = ev.dataTransfer.getData("text");
+	  // console.log(data);
+	  // console.log(ev.target.className + " butt");
+	  // console.log(document.getElementsByClassName(ev.target.className + " butt"));
+	  // document.getElementsByClassName(ev.target.className + " butt").setAttribute(class, "value");
+
+	  let d = document.getElementsByClassName(ev.target.className)[0];
+	  if (d.childNodes[1])
+	  	d.removeChild(d.childNodes[1])
+	  	// d.remove();
+	  ev.target.appendChild(document.getElementsByClassName(data)[0]);
+
+	}
+	// function
+</script>
 </body>
 </html>
