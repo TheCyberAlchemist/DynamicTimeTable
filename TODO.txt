@@ -1,0 +1,37 @@
+-------------Countdowns----------------------
+
+
+Create schema
+
+
+formatting and making UI
+
+sharable tables using unique code( between colleagues )
+
+
+buttons = objects.all()
+
+class Activity{
+	
+	Name_of_event;
+	link;
+	color;
+	title;
+	duration;
+	------on edit-------
+	start_time;( automatic )
+	end_time;( automatic )
+	day;( automatic )
+
+}
+
+
+
+
+
+but = button("DBMS","link","asd","title",3600,9*3600,9:50(*3600),mon)
+
+
+
+
+
